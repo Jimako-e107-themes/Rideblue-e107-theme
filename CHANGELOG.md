@@ -2,7 +2,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
  
- 
+
+# [2.1.1] 
+- ADDED support for signin plugin
+- UPDATED layouts for e107 2.3.1 new standards
+- UPDATED theme rendering for e107 2.3.1 new standards
+- FIXED little css issues after core changes
+- ADDED variabily of header brand (4 options)
+- REMOVED not needed templates and old way of templating
+
 # [2.0.1]  
 
 - FIXED look of news categories menu
