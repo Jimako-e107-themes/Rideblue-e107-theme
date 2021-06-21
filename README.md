@@ -1,8 +1,15 @@
-# RideBlue2
-RideBlue theme by veskoto with e107 Bootstrap version 2.2.0 for 2.3.1 core version.
- 
+
+# RideBlue3
+RideBlue theme by veskoto with e107 Bootstrap 5 for only 2.3.1 core version.
+
 ## Demo site:
 https://www.e107sk.com/bootstrap/rideblue/
+
+This theme is not recommended to use on live site.
+
+
+# RideBlue2
+RideBlue theme by veskoto with e107 Bootstrap version 2.2.0 for 2.3.1 core version.
 
 ## Donate with [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FKG5N3F6QL99J)
 
