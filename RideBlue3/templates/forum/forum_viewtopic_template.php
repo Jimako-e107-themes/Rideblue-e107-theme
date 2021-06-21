@@ -32,145 +32,7 @@ $sc_style['CUSTOMTITLE']['post'] = "</small>";
 
 $sc_style['USER_EXTENDED']['location.text_value']['mid'] = ": ";
 $sc_style['USER_EXTENDED']['location.text_value']['post'] = "<br />";
-
  
-$FORUM_VIEWTOPIC_TEMPLATE['start'] = '
-<a id="top"></a>
-<div class="topics">
-<div class="topics__heading">
-    <h2 class="topics__heading-title">{THREADNAME}</h2>
-</div>
-<div class="topics__control">{TRACK} {BUTTONS} {NEXTPREV}</div>
-<div class="topics__heading-info ">
-	{MESSAGE}
-</div>
-<div class="d-flex justify-content-between"> 
-	<div class="moderators">{MODERATORS}</div>
-	<div class="tags">{GOTOPAGES}</div>
-	<div class="threadstatus">{THREADSTATUS}</div>
-</div>';
-
-$FORUM_VIEWTOPIC_TEMPLATE['end'] = 
-'
-<div class="d-flex justify-content-between"> 
-<div class="moderators">{BUTTONS}</div>
-<div class="tags">{GOTOPAGES}</div>
-<div class="threadstatus">{FORUMJUMP}</div>
-</div>
-</div> <!-- end of topics --!> 
-';
- 
-	 /*
-	 <div style='text-align:center' class='spacer'>
-	 <a href='".e_PLUGIN."rss_menu/rss.php?8.1.".e_QUERY."'><img src='".e_PLUGIN."rss_menu/images/rss1.png' alt='{LAN=FORUM_0012}' style='vertical-align: middle; border: 0;' /></a> <a href='".e_PLUGIN."rss_menu/rss.php?8.2.".e_QUERY."'><img src='".e_PLUGIN."rss_menu/images/rss2.png' alt='{LAN=FORUM_0013}' style='vertical-align: middle; border: 0;' /></a> <a href='".e_PLUGIN."rss_menu/rss.php?8.3.".e_QUERY."'><img src='".e_PLUGIN."rss_menu/images/rss3.png' alt='{LAN=433}' style='vertical-align: middle; border: 0;' /></a>
-	 </div>
-	 */
- 
-
-
-$FORUM_VIEWTOPIC_TEMPLATE['thread'] = 
-'<div class="topic mt-2">
-	<div class="topic__head ">
-		<div class="topic__caption d-flex justify-content-between">
-			<div class="topic__name">
-			{NEWFLAG} {POSTER}  {ANON_IP} 
-			</div>
-			<div class="topic__date"><i class="fas fa-clock"></i>{THREADDATESTAMP}</div>
-			<div class="topic__control">
-			  {EMAILITEM} {PRINTITEM} {REPORTIMG}{EDITIMG}{QUOTEIMG}</div>
-		</div>
-
-	</div>
-	<div class="topic_body d-flex align-items-start">
-		<div class="topic__user">
-			{CUSTOMTITLE}
-
-			<div class="topic__avatar">
-				
-				{AVATAR}
-				
-			</div>
-			{LEVEL=special}
-				{LEVEL=pic}
-				{LEVEL=userid}
-				{JOINED}
-				{USER_EXTENDED=location.text_value}
-				{POSTS}
-				{PROFILEIMG}
-				{EMAILIMG}
-				{WEBSITEIMG}
-				{PRIVMESSAGE}
-		</div>
-		<div class="topic__content">
-			<div class="topic__text">
-				{POST}
-				{ATTACHMENTS}
-				{LASTEDIT}{LASTEDITBY=link}
-				{SIGNATURE}
-			</div>
-		</div>
-	</div>
-	<div class="topic__footer d-flex justify-content-between">
-	<div class="topic__footer-likes">
-		{TOP}
-	</div>
-	<div class="topic__footer-shares">
-		{MODOPTIONS}
-		</div>
-	</div>
-</div>';
- 
-
-
-$FORUM_VIEWTOPIC_TEMPLATE['replies'] = $FORUM_VIEWTOPIC_TEMPLATE['thread'];
-
- 
-
-$FORUMDELETEDSTYLE = "<tr>
-	<td class='forumheader' style='vertical-align:middle'>
-	{POSTER}
-	{ANON_IP}
-	</td>
-	<td class='forumheader' style='vertical-align:middle'>
-	<table cellspacing='0' cellpadding='0' style='width:100%'>
-	<tr>
-	<td class='smallblacktext'>
-	{THREADDATESTAMP}
-	</td>
-	<td style='text-align:right'>
-	</td>
-	</tr>
-	</table>
-	</td>
-	</tr>
-	<tr>
-	<td class='forumheader3' style='vertical-align:top' colspan='2'>
-	{POSTDELETED}
-	</td>
-	</tr>
-	<tr>
-	<td class='finfobar'>
-	<span class='smallblacktext'>
-	</span>
-	</td>
-	<td class='finfobar' style='vertical-align:top' colspan='2'>
-	<table cellspacing='0' cellpadding='0' style='width:100%'>
-	<tr>
-	<td>
-	</td>
-	<td style='text-align:right'>
-	{MODOPTIONS}
-	</td>
-	</tr>
-	</table>
-	</td>
-	</tr>
-	<tr>
-	<td colspan='2'>
-	</td>
-	</tr>";
-
-
 $FORUM_CRUMB['sitename']['value'] = "<a class='forumlink' href='{SITENAME_HREF}'>{SITENAME}</a>";
 $FORUM_CRUMB['sitename']['sep'] = " :: ";
 
@@ -190,8 +52,8 @@ $FORUM_CRUMB['forum']['value'] = "<a class='forumlink' href='{FORUM_HREF}'>{FORU
 
 // New in v2.x - requires a bootstrap theme be loaded.  
 
-$FORUM_VIEWTOPIC_TEMPLATE['caption'] 	= "{THREADNAME}";
-$FORUM_VIEWTOPIC_TEMPLATEx['start'] 	= "
+$FORUM_VIEWTOPIC_TEMPLATE['caption'] 	= "";
+$FORUM_VIEWTOPIC_TEMPLATE['start'] 	= "
 
 	<div class='row-fluid'>
 		<div>{BACKLINK}</div>
@@ -208,40 +70,31 @@ $FORUM_VIEWTOPIC_TEMPLATEx['start'] 	= "
 
 ";
 
-$FORUM_VIEWTOPIC_TEMPLATEx['thread'] = "
+$FORUM_VIEWTOPIC_TEMPLATE['thread'] = "
 									<li id='post-{POSTID}' class='forum-viewtopic-post'>
-										<div class='hidden-xs row row-fluid btn-navbar navbar-btn'>
+										<div class='row d-flex justify-content-between'>
 
-												{SETIMAGE: w=100&h=100&crop=1}
-												<div class='col-xs-2 span2 left text-left'>
-													<div class='row'>
-														<div class='col-xs-12 col-md-12 forum-user-combo'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
-													</div>
-
-												{NEWFLAG} {ANON_IP}</div>
-												<div class='col-xs-4 col-sm-3 text-muted span4 text-muted muted'><small>{THREADDATESTAMP=relative}</small></div>
-												<div class='col-xs-5 text-muted span5 text-muted muted right text-right'><small>{LASTEDIT}{LASTEDITBY=link}</small></div>
-												<div class='col-xs-3 col-sm-2 span1 right text-right'>{POSTOPTIONS}</div>
+												
+												<div class='col-auto left text-left'>
+													{USERCOMBO} {CUSTOMTITLE}
+												   {NEWFLAG}  {ANON_IP}
+                                                </div>
+												<div class='col-auto'><small>{THREADDATESTAMP=relative}</small></div>
+												<div class='col-auto'><small>{LASTEDIT}{LASTEDITBY=link}</small></div>
+												<div class='col-auto float-end'>{POSTOPTIONS}</div>
 										
 										</div>
 
-										<div class='row row-fluid'  >
-
-											<div class='col-xs-12 col-md-2 span2 left'>
-													<div class='row'>
-
-													<div class='col-xs-3 col-md-12 text-center'>{AVATAR: shape=rounded}</div>
-													<div class='col-xs-6 visible-xs'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
-														<div class='col-xs-6 col-md-12 hidden-xs'>
-															<small>
-																{LEVEL=badge} {LEVEL=glyph}
-															</small>
-														</div>
-														<div class='visible-xs col-xs-3'><div class='clearfix'>{POSTOPTIONS}</div><div class='pull-right float-right float-end'><br /><small class='text-muted'>{THREADDATESTAMP=relative}</small></div></div>
-													</div>
-											</div>
-											<div class='visible-xs col-xs-12'><hr /></div>
-											<div class='col-xs-12 col-md-9 span9 forum-thread-text '>
+										<div class='row d-flex justify-content-between'  >
+                                            <div class='col-3 left text-center'>
+                                                        {SETIMAGE: w=100&h=100&crop=1}{AVATAR: shape=rounded}
+                                                        <small >
+														{LEVEL=badge} {LEVEL=glyph}
+														</small> 
+									 
+										    </div>
+										  
+											<div class='col-9  forum-thread-text '>
 												{POLL}
 												{THREAD_TEXT}
 												{ATTACHMENTS: modal=1}
@@ -266,7 +119,7 @@ $FORUM_VIEWTOPIC_TEMPLATEx['thread'] = "
 
 									";
 
-$FORUM_VIEWTOPIC_TEMPLATEx['end'] = "</ul>
+$FORUM_VIEWTOPIC_TEMPLATE['end'] = "</ul>
 <div class='col-xs-12'>
 	<hr />
 </div>
@@ -293,7 +146,7 @@ $FORUM_VIEWTOPIC_TEMPLATEx['end'] = "</ul>
 
 
 
-$FORUM_VIEWTOPIC_TEMPLATEx['replies'] = $FORUM_VIEWTOPIC_TEMPLATE['thread'];
+$FORUM_VIEWTOPIC_TEMPLATE['replies'] = $FORUM_VIEWTOPIC_TEMPLATE['thread'];
 
 
 $FORUM_VIEWTOPIC_TEMPLATE['deleted'] = "
