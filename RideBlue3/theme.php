@@ -124,7 +124,7 @@ class theme implements e_theme_render
             case 'default':
             default:
                 echo '
-					<h3>'.$caption.'</h3>
+					<h3 class="text-center">'.$caption.'</h3>
 					<div class="footerbar">'.$text.'</div>';
                 break;
         }

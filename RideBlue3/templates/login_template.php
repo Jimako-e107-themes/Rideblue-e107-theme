@@ -3,30 +3,17 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$c_class == '';
-if(defined('e_IFRAME') AND e_IFRAME == true)  {
-	$w_class =  ' class="container"';
 
-};
- 
-// Starter for v2. - Bootstrap 
-$LOGIN_TEMPLATE['page']['header'] = "
-<div id='login-template' {$w_class} >
-	<div class='text-center row'>
-		<div class='col-md-offset-3 col-md-6 text-center'> 
-			{LOGO=login}
-		</div>
-	</div>		
-	";
+$theme_settings = array();
+if(class_exists('theme')) {
+ $theme_settings = theme_settings::get_membersonly_template(); 
+ $form_settings = theme_settings::get_singleforms(); 
+}
 
-$LOGIN_TEMPLATE['page']['body'] = '{SETSTYLE=nocaption} 
-<div class="row">  
-	<div class="col-md-offset-3 col-md-6 text-center"> 
-	{LOGIN_TABLE_LOGINMESSAGE}
-	<h3 class="hometoptitle">'.LAN_LOGIN_3.' | '.SITENAME.'</h3>
-</div>
-    
-	 ';
+
+$LOGIN_TEMPLATE['page']['body'] = '
+		{LOGIN_TABLE_LOGINMESSAGE}
+        <h1 id="pagetitle" class="h2 text-center">{LAN=LOGIN_4}</h1>';
 	if (e107::pref('core', 'password_CHAP') == 2)
 	{
 		$LOGIN_TEMPLATE['page']['body'] .= "
@@ -36,60 +23,43 @@ $LOGIN_TEMPLATE['page']['body'] = '{SETSTYLE=nocaption}
 	}
 	else
 	{
-	  $LOGIN_TEMPLATE['page']['body'] .= "</div>";
+	  $LOGIN_TEMPLATE['page']['body'] .= "<span>";
 	}
-
-/* workround */	
-/*$LOGIN_TEMPLATE['page']['header'] .= $LOGIN_TEMPLATE['page']['body'];
-$LOGIN_TEMPLATE['page']['body'] = '';*/
-
-
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_USERNAME'] = "";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_PASSWORD'] = "";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_SECIMG_SECIMG'] = "<div class='form-group'>{---}</div>";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_SECIMG_TEXTBOC'] = "<div class='form-group'>{---}</div>";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_REMEMBERME'] = "<div class='form-group checkbox'>{---}</div>";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_SUBMIT'] = "<div class='form-group'>{---}</div>";
-$LOGIN_WRAPPER['page']['LOGIN_TABLE_FOOTER_USERREG'] = "<div class='form-group'>{---}</div>";
+    
+    
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_USERNAME'] = "<div class='form-group row m-2'><label class='control-label' for='loginname'>{LOGIN_USERNAME_LABEL}</label>{---}</div>";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_PASSWORD'] = "<div class='form-group row m-2'><label class='control-label' for='password'>{LAN=LAN_LOGIN_2}</label>{---}</div>";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_SECIMG_SECIMG'] = "<div class='form-group row m-2'><label class='control-label' for='code-verify'>" . e107::getSecureImg()->renderLabel()."</label><div class='d-flex secimg'>{---}";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_SECIMG_TEXTBOC'] = " <div>{---}</div></div></div>";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_REMEMBERME'] = "<div class='form-group row m-2 checkbox'>{---}</div>";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_SUBMIT'] = "<div class='text-center m-2'>{---}</div>";
+$LOGIN_WRAPPER['page']['LOGIN_TABLE_FOOTER_USERREG'] = "<div class='form-group row m-2'>{---}</div>";
 $LOGIN_WRAPPER['page']['LOGIN_TABLE_LOGINMESSAGE'] = "<div class='alert alert-danger'>{---}</div>";
 
 
 // $LOGIN_WRAPPER['page']['LOGIN_TABLE_FPW_LINK'] = "<div class='form-group'>{---}</div>";
 
 $LOGIN_TEMPLATE['page']['body'] .= '
-<div class="row">  
-  	<div class="col-md-offset-3 col-md-6 text-center" style="margin-bottom: 10px;"> 
-        <div class="forumheader"  style="text-align:center;" ><img src="'.THEME_ABS.'images/password.png" alt="" /> '.LAN_THEME_LOGIN_4.'</div> 
-    	</div>
-		<div class="col-md-offset-3 col-md-6 text-center "> 
-			{SOCIAL_LOGIN: size=3x}
-		</div>
-	    <div class="col-md-offset-3 col-md-6 text-center "> 
-	     	<div class="form-group  row"><div class="col-md-3 col-sm-3 col-xs-12 vcenter"><label class="title_clean">'.LAN_LOGIN_1.'</label></div>
-			 <div class="col-md-9 col-sm-9 col-xs-12 ">{LOGIN_TABLE_USERNAME}</div></div>
-			 <div class="form-group row"><div class="col-md-3 col-sm-3 col-xs-12 vcenter"><label class="title_clean">'.LAN_LOGIN_2.'</label></div>
-			 <div class="col-md-9  col-sm-9 col-xs-12">{LOGIN_TABLE_PASSWORD}</div></div>  
-		</div> 
- 	</div>
- 
-   <div class="col-md-12 text-center">
+        {LOGIN_TABLE_USERNAME}
+        {LOGIN_TABLE_PASSWORD}
+        {SOCIAL_LOGIN: size=3x}
 		{LOGIN_TABLE_SECIMG_SECIMG} {LOGIN_TABLE_SECIMG_TEXTBOC}
         {LOGIN_TABLE_REMEMBERME}
         {LOGIN_TABLE_SUBMIT}
-  	</div>
- <div>';
 
-$LOGIN_TEMPLATE['page']['footer'] =  "
-   </div>
-			<div style='font-weight: bold;' class='text-center' > 
-			<div class='col-md-12  col-xs-12 '> 
-				{LOGIN_TABLE_SIGNUP_LINK} &nbsp;&nbsp;&nbsp;
-				{LOGIN_TABLE_FPW_LINK}
-			</div> 
-		</div>
-	";
+ ';
+ 
+ 
+$LOGIN_TEMPLATE['page']['header'] =  $theme_settings['membersonly_start'].'
+ <div id="login-template">'.$form_settings['login_logo'];
+
+$LOGIN_TEMPLATE['page']['footer'] =  ' 
+    			<div class="login-page-footer" style="text-align: center;">
+    				{LOGIN_TABLE_SIGNUP_LINK} | {LOGIN_TABLE_FPW_LINK}
+    			</div>
+	           </div>'.
+$theme_settings['membersonly_end'];
 	
 
 
 
-?>

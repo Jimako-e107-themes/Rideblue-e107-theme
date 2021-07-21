@@ -24,7 +24,7 @@ class theme_settings
     public static function get_membersonly_template()
     {
         $tmp['membersonly_start'] = '{LAYOUT_NAVBAR: key=default} 
-          <section class="page-header section-height-85">
+          <section class="page-header">
             <div class="container">
               <div class="row">
                 <div class="col-xl-5 col-lg-6 col-md-7 mx-auto">';
@@ -37,7 +37,7 @@ class theme_settings
     }
     
     public static function get_singleforms() {
-	    //$tmp['login_logo'] = '<div class="center">{LOGO: login}</div>';
+	    $tmp['login_logo'] = '<div class="center">{LOGO: login}</div>';
         return $tmp;
 	}
 
@@ -62,7 +62,7 @@ class theme_settings
 	} 
 
 	public static function class_submit_button($name ='') {
-		$tmp ='';
+		$tmp ='btn btn-primary';
 		return $tmp;
 	}	
     

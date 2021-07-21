@@ -1,77 +1,37 @@
 <?php
+// $Id$
 
 
-if (!defined("USER_WIDTH")){ define("USER_WIDTH","width:70%"); }
+if (!defined('e107_INIT')) { exit; }
 
-// ##### FPW TABLE -----------------------------------------------------------------------------
-if(!isset($FPW_TABLE))
-{
-		$FPW_TABLE = "
-		<div style='text-align:center'>
-		<form method='post' action='".SITEURL."fpw.php' autocomplete='off'>
-		<table style='".USER_WIDTH."' class='table fborder'>
-
-		<tr>
-		<td class='fcaption' colspan='2'>".LAN_05."</td>
-		</tr>";
-
-		if($pref['allowEmailLogin']==0)
-		{
-			$FPW_TABLE .= "
-			<tr>
-			<td class='forumheader3' style='width:70%'>".LAN_FPW1.":</td>
-			<td class='forumheader3' style='width:30%;text-align:center'>
-			{FPW_USERNAME}
-			</td>
-			</tr>";
-		}
-
-
-		$FPW_TABLE .="
-		<tr>
-		<td class='forumheader3' style='width:70%'>".LAN_112.":</td>
-		<td class='forumheader3 text-left' style='width:30%'>
-		{FPW_USEREMAIL}
-		</td>
-		</tr>";
-
-		if(deftrue('USE_IMAGECODE'))
-		{
-				$FPW_TABLE .= "
-				<tr>
-					<td class='forumheader3' style='width:70%'>{FPW_TABLE_SECIMG_LAN}</td>
-					<td class='forumheader3 text-left' style='width:30%;'>{FPW_TABLE_SECIMG_HIDDEN} {FPW_TABLE_SECIMG_SECIMG}<br />
-					{FPW_TABLE_SECIMG_TEXTBOC}<br />
-					</td>
-				</tr>";
-		}
-
-		$FPW_TABLE .="
-		<tr style='vertical-align:top'>
-		<td class='forumheader' colspan='2' style='text-align:center'>
-		{FPW_SUBMIT}	
-		</td>
-		</tr>
-		</table>
-		</form>
-		</div>";
+$theme_settings = array();
+if(class_exists('theme')) {
+ $theme_settings = theme_settings::get_membersonly_template(); 
+ $form_settings = theme_settings::get_singleforms(); 
 }
-// ##### ------------------------------------------------------------------------------------------
 
-// ##### FPW HEADER TABLE -------------------------------------------------------------------------
-if(!isset($FPW_TABLE_HEADER))
-{
-		$FPW_TABLE_HEADER = "
-		<div style='width:100%;text-align:center;margin-left:auto;margin-right:auto'>
-			<div><br />
-			{FPW_LOGIN_LOGO}
-			<br />";
-}
-// ##### ------------------------------------------------------------------------------------------
 
-// ##### FPW FOOTER TABLE -------------------------------------------------------------------------
-if(!isset($FPW_TABLE_FOOTER))
-{
-		$FPW_TABLE_FOOTER = "</div></div>";
-}
-// ##### ------------------------------------------------------------------------------------------
+
+$FPW_TEMPLATE['form'] = '
+					<div class="row">
+						<div class="col-12">
+						<p>{FPW_TEXT}</p>
+						<div class="form-group row m-2">{FPW_USEREMAIL}</div>
+						<div class="form-group row m-2">{FPW_CAPTCHA_IMG}{FPW_CAPTCHA_INPUT}</div>
+						  
+								<div class="col-12 text-center">
+								{FPW_SUBMIT}
+								</div>
+						 		
+						</div>
+					</div>
+					';
+
+$FPW_TEMPLATE['header'] = $theme_settings['membersonly_start'];
+$FPW_TEMPLATE['footer'] = $theme_settings['membersonly_end'];
+
+
+
+
+
+
