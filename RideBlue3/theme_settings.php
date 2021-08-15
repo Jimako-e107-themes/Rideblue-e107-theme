@@ -1,5 +1,6 @@
 <?php
 
+
 class theme_settings
 {
     public static function get_jmlayouts() {
@@ -40,19 +41,30 @@ class theme_settings
 	    $tmp['login_logo'] = '<div class="center">{LOGO: login}</div>';
         return $tmp;
 	}
-
+ 
+    
+    public static function main_ul_class() {
+		$main_ul_class = "navbar-nav";
+		return $main_ul_class;
+	}
+ 
 	public static function main_li_class() {
-		$main_li_class = "";
+		$main_li_class = "nav-item";
 		return $main_li_class;
 	}
 
 	public static function main_a_class() {
-		$main_a_class  = "";
+		$main_a_class  = "nav-link";
 		return $main_a_class;
+	}
+    
+	public static function main_sub_div_class() {
+		$main_sub_div_class  = "dropdown-menu";
+		return $main_sub_div_class;
 	}
 
 	public static function main_sub_a_class() {
-		$main_sub_a_class = "";
+		$main_sub_a_class = "dropdown-item border-radius-md";
 		return $main_sub_a_class;
 	}
 

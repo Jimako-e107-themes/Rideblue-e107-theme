@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Theme name="RideBlue3" version="1.0.0" date="2021-06-21" compatibility="2.3.1">
+<e107Theme name="RideBlue3" version="1.0.1" date="2021-07-08" compatibility="2.3.1">
 	<author name ="Jimako" email="" url="https://www.e107sk.com" />
 	<summary>RideBlue theme by veskoto with e107 Bootstrap5 </summary>
 	<description>RideBlue theme by veskoto with e107 Bootstrap5</description>
@@ -24,12 +24,31 @@
 		<library name="fontawesome" version="5"  />
 	</libraries>
 	<layouts>
-		<layout name='3columns' title='3 colums' default='true'>
-			<custompages>FRONTPAGE</custompages>	
+		<layout name='home' title='Home / Landing Page' >
+			<custompages>FRONTPAGE</custompages>
 		</layout>
+
+        <layout name='default' title='Default layout' default='true' >
+             <menuPresets>
+				<area id='1'>
+                    <menu name='login' />
+					<menu name='other_news' />
+					<menu name='blogcalendar' />
+				</area>
+				<area id='2'>
+					<menu name='search' /> 
+                    <menu name='online' />
+					<menu name='news_categories' />				 
+					<menu name='other_news2' />					
+				</area>                
+			</menuPresets>
+        </layout>     
+		<layout name='efiction' title='Efiction Pages' >
+			<custompages>:efiction</custompages>             
+		</layout> 
 		<layout name='full' title='Full width page'  >
             <custompages>forum</custompages>															            
-		</layout>
+		</layout>    
 		<layout name='sidebar_right' title='Blog sidebar-right'  >
 			<custompages>user.php content/ calendar_menu/ blogcalendar_menu/</custompages>	
 		</layout>

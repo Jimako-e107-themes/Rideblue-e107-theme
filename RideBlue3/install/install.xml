@@ -466,52 +466,6 @@
 			<field name="link_owner"></field>
 		</item>
 	</dbTable>
-	<dbTable name="menus">
-		<item>
-			<field name="menu_id">42</field>
-			<field name="menu_name">about-me</field>
-			<field name="menu_location">1</field>
-			<field name="menu_order">1</field>
-			<field name="menu_class">0</field>
-			<field name="menu_pages"></field>
-			<field name="menu_path">1</field>
-			<field name="menu_layout"></field>
-			<field name="menu_parms"></field>
-		</item>
-		<item>
-			<field name="menu_id">73</field>
-			<field name="menu_name">clock_menu</field>
-			<field name="menu_location">1</field>
-			<field name="menu_order">2</field>
-			<field name="menu_class">0</field>
-			<field name="menu_pages"></field>
-			<field name="menu_path">clock_menu/</field>
-			<field name="menu_layout"></field>
-			<field name="menu_parms"></field>
-		</item>
-		<item>
-			<field name="menu_id">74</field>
-			<field name="menu_name">lastseen_menu</field>
-			<field name="menu_location">2</field>
-			<field name="menu_order">4</field>
-			<field name="menu_class">0</field>
-			<field name="menu_pages"></field>
-			<field name="menu_path">online/</field>
-			<field name="menu_layout"></field>
-			<field name="menu_parms"></field>
-		</item>
-		<item>
-			<field name="menu_id">112</field>
-			<field name="menu_name">about-me</field>
-			<field name="menu_location">1</field>
-			<field name="menu_order">1</field>
-			<field name="menu_class">0</field>
-			<field name="menu_pages"></field>
-			<field name="menu_path">1</field>
-			<field name="menu_layout">sidebar_right</field>
-			<field name="menu_parms"></field>
-		</item>
-	</dbTable>
 	<dbTable name="news">
 		<item>
 			<field name="news_id">1</field>

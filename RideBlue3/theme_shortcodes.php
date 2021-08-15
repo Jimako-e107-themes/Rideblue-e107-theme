@@ -12,7 +12,10 @@
  
 $sitetheme = e107::getPref('sitetheme');
 
-require_once(e_THEME.$sitetheme."/shortcodes/theme_shortcodes.php");
+require_once(e_THEME.$sitetheme."/shortcodes/default_shortcodes.php");
+
+e107::getSingleton('theme_settings', e_THEME.$sitetheme.'/theme_settings.php');  
+
 
 class theme_shortcodes extends default_theme_shortcodes
 {
@@ -25,6 +28,56 @@ class theme_shortcodes extends default_theme_shortcodes
 		$this->forumpref = (array) e107::pref('forum');
  		
 	}
+    
+    /**
+	 * Special Header Shortcode for dynamic menuarea templates.
+	 * @shortcode {---HEADER---}
+	 * @return string
+	 */
+     
+	public function sc_header()
+	{
+        $text = ''; 
+    	$layout =  preg_replace('/[\W]/', '', THEME_LAYOUT);     
+        
+        $parm['type'] =  'header'; 
+	    $parm['key']  =  'default';
+        $parm['path'] =  'header_default.html';    
+
+        $tmp = theme_settings::get_jmlayouts();
+ 
+        if($tmp[THEME_LAYOUT]['layout_header']) {
+            $parm['file'] =  $tmp[THEME_LAYOUT]['layout_header'];
+        }
+ 
+        $text = $this->sc_layout_header($parm);  	 
+        return $text;   
+    }
+    
+	/**
+	 * Special Footer Shortcode for dynamic menuarea templates.
+	 * @shortcode {---FOOTER---}
+	 * @return string
+	 */
+	public function sc_footer()
+	{
+        $text = ''; 
+    	$layout =  preg_replace('/[\W]/', '', THEME_LAYOUT);     
+        
+        $parm['type'] = 'footer'; 
+	    $parm['key']  =  'default';
+        $parm['path'] =  'footer_default.html';    
+
+        $tmp = theme_settings::get_jmlayouts();
+ 
+        if($tmp[THEME_LAYOUT]['layout_footer']) {
+            $parm['file'] =  $tmp[THEME_LAYOUT]['layout_footer'];
+        }
+ 
+        $text = $this->sc_layout_footer($parm);  	 
+        return $text;   
+    }
+   
 
 	/* {NAVBAR_BRANDING} */
 	function sc_navbar_branding()

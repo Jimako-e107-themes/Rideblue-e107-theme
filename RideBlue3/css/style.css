@@ -1,33 +1,11 @@
  
-ul, h1, h2, h3, h4, h5, form {padding: 0; margin: 0}
-a:link, a:active, a:visited {outline: none; color: #0054a6; text-decoration: none; /*background: transparent*/}
- 
-img { border: 0 none; }
- 
-  
-h1.dtitle { position: relative; color: #206099; font-size: 22px; margin-top: 20px; font-weight: normal}
-h2.dtitle { clear: both;   color: #206099; font-size: 16px; margin: 5px 0 0 20px; font-weight: normal; }
- 
-
-#bodybar {width: 100%;}
-#bodycont { margin: 5px auto 0;}
- 
-#fbodycont {width: 95%; margin: 5px auto 0; background-color:#f5f4f4; border: 1px solid #e8e8e8;}
- 
- 
-
-
-
-#wrap {  background-color: white;  ; }
-#onewrap { float: left; background-color: white; width: 100%; }
 
  
 #leftsidecont ul {margin: 0; padding: 10px 0px 10px 0px; list-style: none;}
-#leftsidecont ul li {width: auto; border-bottom: 2px dotted #d6dee6}
-#leftsidecont ul li a {padding: 5px 5px 5px 13px; font-size: 12px; color: #003d78; width: auto;  background: url(images/bullet3.gif) no-repeat left 9px;}
+ 
+ 
 #leftsidecont ul li a:hover {color: #3da7f4;}
-#leftsidecont h2 {padding: 8px 0 15px 10px; color: white; font-size: 12px; background: url(images/barbg.gif) repeat-x left top;}
-/*#leftsidecont h2 a{ color: white;}    */
+
 
 #leftsidecontone {   width: 25%; min-width: 200px; }
 #leftsidecontone ul {margin: 0; padding: 10px 0px 10px 0px; list-style: none;}
@@ -51,7 +29,7 @@ h2.dtitle { clear: both;   color: #206099; font-size: 16px; margin: 5px 0 0 20px
 #sidecont ul li a:hover {color: #3da7f4;}
 .insidebox {padding: 0 15px 15px 15px}
 .innerside {padding: 3px 3px 3px 3px; border: 1px solid #e5e5e5; background: #f9f8f8; margin-bottom: 5px;}
-#sidecont h2 {padding: 8px 0 15px 10px; color: white; font-size: 12px; background: url(images/barbg.gif) repeat-x left top;}
+ 
  
 .clearit {clear: both; height: 5px}
 

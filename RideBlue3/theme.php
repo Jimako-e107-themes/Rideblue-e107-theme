@@ -3,8 +3,7 @@
 if (!defined('e107_INIT')) {
     exit;
 }
-
-e107::lan('theme');
+ 
 
 if (defined('e_PAGE')) {
     if (e_PAGE == 'login.php' && !e107::getPref('membersonly_enabled')) {
@@ -85,7 +84,7 @@ class theme implements e_theme_render
     {
         $style = varset($options['setStyle'], 'default');
 
-        if (e_DEBUG) {
+        if (true) {
             echo '
 			<!-- tablestyle initial:  style='.$style.'  mode='.$mode.'  UniqueId='.varset($options['uniqueId']).' -->
 			';
@@ -109,13 +108,15 @@ class theme implements e_theme_render
             break;
 
             case 'sidebar':
-                echo '
-					<div class="headerbox"><h2>'.$caption.'</h2></div>
-					<div class="insidebox">'.$text.'</div>';
+                echo 
+                '<div class="block">
+                    <div class="title">'.$caption.'</div>
+                    <div class="content">'.$text.'</div>
+                </div>';
             break;
             case 'footerbar':
                 echo '
-					<h3>'.$caption.'</h3>
+					<h1 class="text-center dtitle">'.$caption.'</h1>
 					<div class="footerbar">'.$text.'</div>';
             break;
             case 'topmenu':
@@ -124,7 +125,7 @@ class theme implements e_theme_render
             case 'default':
             default:
                 echo '
-					<h3 class="text-center">'.$caption.'</h3>
+					<h1 class="text-center dtitle">'.$caption.'</h1>
 					<div class="footerbar">'.$text.'</div>';
                 break;
         }
