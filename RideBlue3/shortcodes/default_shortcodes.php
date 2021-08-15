@@ -301,4 +301,25 @@ class default_theme_shortcodes extends e_shortcode
             return $text;
         }
     }
+    
+        
+    /* {ALT_NAVIGATION} */
+    /**
+     * @param null $parm
+     * @param string ['type'] main|side|footer|alt|alt5|alt6 (the data)
+     * @param string ['layout'] main|side|footer|alt|alt5|alt6| or custom template key.  (the template)
+     * @return string
+    **/
+    
+    /*  fix for 3 level navigation menu, first time used in ASP theme 12/2017 */
+ 
+    function sc_alt_navigation($parm = NULL) {
+    
+        $theme = e107::getPref('sitetheme');
+        $themepath = e_THEME.$theme;
+        
+        include_once(e_THEME.$theme.'/shortcodes/navigation.php');
+        return $text;
+        
+    }
 }

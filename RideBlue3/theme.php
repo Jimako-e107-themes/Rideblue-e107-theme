@@ -50,7 +50,9 @@ class theme implements e_theme_render
     public function register_css()
     {
         e107::css('theme', 'e107.css');
-        e107::css('theme', 'css/style.css');
+        
+        e107::css('theme', 'css/bootstrap.min.css');
+        e107::css('theme', 'css/style.min.css');
         e107::css('theme', 'css/main_custom.css');
     }
 

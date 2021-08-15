@@ -43,44 +43,74 @@ class theme_settings
 	}
  
     
-    public static function main_ul_class() {
-		$main_ul_class = "navbar-nav";
-		return $main_ul_class;
-	}
+    public static function get_linkstyle() {
+    
  
-	public static function main_li_class() {
-		$main_li_class = "nav-item";
-		return $main_li_class;
-	}
-
-	public static function main_a_class() {
-		$main_a_class  = "nav-link";
-		return $main_a_class;
-	}
+            $link_settings['main']['dropdown_on'] = " data-bs-toggle='dropdown' data-bs-auto-close='outside' ";
     
-	public static function main_sub_div_class() {
-		$main_sub_div_class  = "dropdown-menu";
-		return $main_sub_div_class;
-	}
+            /* 1.st level ul */
+            $link_settings['main']['prelink'] = '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
+            $link_settings['main']['postlink'] = '</ul>';
+            /* 1.st level li */
+            $link_settings['main']['linkstart'] = '<li class="nav-item">';
+            $link_settings['main']['linkstart_hilite'] = '<li class="nav-item active">';  //because bg hover otherwise a active is enough
+            $link_settings['main']['linkstart_sub'] = '<li class="nav-item dropdown {LINK_IDENTIFIER}">';
+            $link_settings['main']['linkstart_sub_hilite'] = '<li class="nav-item dropdown {LINK_IDENTIFIER}">';
+            $link_settings['main']['linkcaret'] = '';
+            $link_settings['main']['linkend'] = "</li>";
+            
+            /* 1.st level a */
+            $link_settings['main']['linkclass'] = 'nav-link'; 
+	        $link_settings['main']['linkclass_hilite'] = 'nav-link active';
+            $link_settings['main']['linkclass_sub'] = 'nav-link dropdown-toggle'; 
+            $link_settings['main']['linkclass_sub_hilite'] = 'nav-link dropdown-toggle active';
+ 
 
-	public static function main_sub_a_class() {
-		$main_sub_a_class = "dropdown-item border-radius-md";
-		return $main_sub_a_class;
-	}
-
-	public static function main_caret($name ='') {
-		$tmp ='';
-		return $tmp;
-	} 
-
-	public static function class_submit_button($name ='') {
-		$tmp ='btn btn-primary';
-		return $tmp;
-	}	
+            $link_settings['main_sub']['prelink'] = '<ul class="dropdown-menu shadow">';
+            $link_settings['main_sub']['postlink'] = '</ul>';
+            
+            $link_settings['main_sub']['linkstart'] = '<li class="linkstart">';
+            $link_settings['main_sub']['linkstart_hilite'] = '<li class="linkstart active">';
+            $link_settings['main_sub']['linkstart_sub'] = '<li class="dropend lower">';
+            $link_settings['main_sub']['linkstart_sub_hilite'] = '<li class="active dropend lower">';
+            $link_settings['main_sub']['linkcaret'] = '';
+            $link_settings['main_sub']['linkend'] = '';
+            
+            $link_settings['main_sub']['linkclass'] = 'dropdown-item'; 
+	        $link_settings['main_sub']['linkclass_hilite'] = 'dropdown-item active';
+            $link_settings['main_sub']['linkclass_sub'] = 'dropdown-item dropdown-toggle'; 
+            $link_settings['main_sub']['linkclass_sub_hilite'] = 'dropdown-item dropdown-toggle active';       
+ 
+            $link_settings['main_sub_sub']['prelink'] = '<ul class="dropdown-menu shadow">';
+            $link_settings['main_sub_sub']['postlink'] = '</ul>';
+  
+            /* used for signin */ 
+            $link_settings['alt'] = $link_settings['main'];
+            $link_settings['alt']['prelink'] = '<ul class="navbar-nav">';
+            $link_settings['alt']['linkdivider'] = '<li class="divider-vertical"></li>';
+            $link_settings['alt']['linkcaret'] = '';
+          
+            $link_settings['alt_sub']['linkdivider'] = '<li><hr class="dropdown-divider"></li>';
+            return $link_settings;
+    }
     
-    public static function get_forum_template() {
-	    $tmp['forum_header_background'] = 'bg-primary text-white';
-        return $tmp;
+    //'.$theme_settings['forum_header_background'].'
+    //'.$theme_settings['forum_table_background'].'
+    //'.$theme_settings['forum_card_background'].'
+    public static function get_forumstyle() {
+    
+        // use card only if something fails, maybe bootstrap update
+    	$style['forum-card'] = 'bg-white mb-3 shadow-sm ';
+        // use card-header only if something fails, maybe bootstrap update
+        $style['forum-card-header'] = ' bg-primary text-white ';
+         //list-group-flush - use only if you need condensed look 
+         //list-group is part of template
+        $style['forum-list-group'] = ' list-group-striped list-group-hover';
+       
+        // bg-transparent -doesn't work with list-group-striped
+        $style['forum-list-group-item'] = 'list-group-item p-2  ';
+  
+        return $style;
 	}
     
 }
