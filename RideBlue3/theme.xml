@@ -17,7 +17,7 @@
 		<image>rideblue2_preview.png</image>
 	</screenshots>
 	<stylesheets>
-		<css file="style.css" name="Default"  />
+		<css file="style.css" name="Default" exclude="bootstrap5" />
 	</stylesheets>
 	<libraries>
 		<library name="bootstrap" version="5" /> 
@@ -49,7 +49,7 @@
 		<layout name='full' title='Full width page'  >
             <custompages>forum</custompages>															            
 		</layout>    
-		<layout name='sidebar_right' title='Blog sidebar-right'  >
+		<layout name='sidebar' title='Sidebar left page'  >
 			<custompages>user.php content/ calendar_menu/ blogcalendar_menu/</custompages>	
 		</layout>
 	</layouts>

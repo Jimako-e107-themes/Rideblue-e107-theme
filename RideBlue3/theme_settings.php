@@ -49,7 +49,7 @@ class theme_settings
             $link_settings['main']['dropdown_on'] = " data-bs-toggle='dropdown' data-bs-auto-close='outside' ";
     
             /* 1.st level ul */
-            $link_settings['main']['prelink'] = '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
+            $link_settings['main']['prelink'] = '<ul class="navbar-nav mb-2 mb-lg-0">';
             $link_settings['main']['postlink'] = '</ul>';
             /* 1.st level li */
             $link_settings['main']['linkstart'] = '<li class="nav-item">';
@@ -66,7 +66,7 @@ class theme_settings
             $link_settings['main']['linkclass_sub_hilite'] = 'nav-link dropdown-toggle active';
  
 
-            $link_settings['main_sub']['prelink'] = '<ul class="dropdown-menu shadow">';
+            $link_settings['main_sub']['prelink'] = '<ul class="dropdown-menu">';
             $link_settings['main_sub']['postlink'] = '</ul>';
             
             $link_settings['main_sub']['linkstart'] = '<li class="linkstart">';
@@ -81,7 +81,7 @@ class theme_settings
             $link_settings['main_sub']['linkclass_sub'] = 'dropdown-item dropdown-toggle'; 
             $link_settings['main_sub']['linkclass_sub_hilite'] = 'dropdown-item dropdown-toggle active';       
  
-            $link_settings['main_sub_sub']['prelink'] = '<ul class="dropdown-menu shadow">';
+            $link_settings['main_sub_sub']['prelink'] = '<ul class="dropdown-menu">';
             $link_settings['main_sub_sub']['postlink'] = '</ul>';
   
             /* used for signin */ 

@@ -203,7 +203,7 @@
 			<field name="link_button">icon-user.glyph</field>
 			<field name="link_category">2</field>
 			<field name="link_order">8</field>
-			<field name="link_parent">52</field>
+			<field name="link_parent">0</field>
 			<field name="link_open">0</field>
 			<field name="link_class">0</field>
 			<field name="link_function"></field>
@@ -218,7 +218,7 @@
 			<field name="link_button">icon-upload.glyph</field>
 			<field name="link_category">2</field>
 			<field name="link_order">9</field>
-			<field name="link_parent">52</field>
+			<field name="link_parent">0</field>
 			<field name="link_open">0</field>
 			<field name="link_class">253</field>
 			<field name="link_function"></field>
@@ -444,21 +444,6 @@
 			<field name="link_category">4</field>
 			<field name="link_order">4</field>
 			<field name="link_parent">48</field>
-			<field name="link_open">0</field>
-			<field name="link_class">0</field>
-			<field name="link_function"></field>
-			<field name="link_sefurl"></field>
-			<field name="link_owner"></field>
-		</item>
-		<item>
-			<field name="link_id">52</field>
-			<field name="link_name">Links 2 - Sidebar</field>
-			<field name="link_url">user.php</field>
-			<field name="link_description"></field>
-			<field name="link_button"></field>
-			<field name="link_category">2</field>
-			<field name="link_order">8</field>
-			<field name="link_parent">0</field>
 			<field name="link_open">0</field>
 			<field name="link_class">0</field>
 			<field name="link_function"></field>

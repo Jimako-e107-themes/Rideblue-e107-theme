@@ -14,16 +14,16 @@ if (defined('e_PAGE')) {
 $sitetheme = e107::getPref('sitetheme');
 e107::getSingleton('theme_settings', e_THEME.$sitetheme.'/theme_settings.php');  
 
+e107::lan('theme');
+
 class theme implements e_theme_render
 {
     public function init()
     {
-        e107::lan('theme');
-
+       
         ////// Your own css fixes ////////////////////////////////////////////////////
         define('CORE_CSS', false);
-        e107::css('theme', 'e107.css');
-
+  
         ////// Theme meta tags /////////////////////////////////////////////////////////
         $this->set_metas();
 
@@ -48,9 +48,7 @@ class theme implements e_theme_render
     }
 
     public function register_css()
-    {
-        e107::css('theme', 'e107.css');
-        
+    {     
         e107::css('theme', 'css/bootstrap.min.css');
         e107::css('theme', 'css/style.min.css');
         e107::css('theme', 'css/main_custom.css');
@@ -99,7 +97,7 @@ class theme implements e_theme_render
 
         switch ($mode) {
             case 'nocaption':
-                echo   $text  ;
+                $style = 'nocaption' ;
             break;
         }
 
@@ -126,9 +124,12 @@ class theme implements e_theme_render
             case 'full':
             case 'default':
             default:
-                echo '
-					<h1 class="text-center dtitle">'.$caption.'</h1>
-					<div class="footerbar">'.$text.'</div>';
+				if(!empty($caption))
+				{
+					echo '<h1 class="h3 text-center dtitle hometoptitle">'.$caption.'</h1>';
+				}
+
+                echo $text;
                 break;
         }
         return;

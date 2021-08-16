@@ -83,33 +83,27 @@ $link_settings['main_sub']['linkstart_sub_hilite'].'<a class="'.$link_settings['
  
 // TEMPLATE FOR {NAVIGATION=side}
 
-$NAVIGATION_TEMPLATE['side']['start'] 				= '<ul class="nav nav-list"><li class="nav-header">Sidebar</li>
+$NAVIGATION_TEMPLATE['side']['start'] 				= '<ul class="list-group nav nav-list"> 
 														';
 
-$NAVIGATION_TEMPLATE['side']['item'] 				= '<li><a href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">{LINK_ICON}{LINK_NAME}</a></li>
+$NAVIGATION_TEMPLATE['side']['item'] 				= '<li class="list-group-item"><a href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">{LINK_ICON}{LINK_NAME}</a></li>
 														';
+$NAVIGATION_TEMPLATE['side']['item_active'] 		= '<li class="list-group-item active"{LINK_OPEN}><a href="{LINK_URL}" title="{LINK_DESCRIPTION}">{LINK_ICON}{LINK_NAME}</a></li>';
 
-$NAVIGATION_TEMPLATE['side']['item_submenu'] 		= '<li class="nav-header">{LINK_ICON}{LINK_NAME}{LINK_SUB}</li>
-														';
-
-$NAVIGATION_TEMPLATE['side']['item_active'] 		= '<li class="active"{LINK_OPEN}><a href="{LINK_URL}" title="{LINK_DESCRIPTION}">{LINK_ICON}{LINK_NAME}</a></li>
-														';
+$NAVIGATION_TEMPLATE['side']['item_submenu'] 		= $NAVIGATION_TEMPLATE['side']['item'];
+$NAVIGATION_TEMPLATE['side']['submenu_item_active'] = $NAVIGATION_TEMPLATE['side']['item_active'] ;
 
 $NAVIGATION_TEMPLATE['side']['end'] 				= '</ul>
 														';
 
 $NAVIGATION_TEMPLATE['side']['submenu_start'] 		= '';
 
-$NAVIGATION_TEMPLATE['side']['submenu_item']		= '<li><a href="{LINK_URL}"{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a></li>';
+$NAVIGATION_TEMPLATE['side']['submenu_item']		= '';
 
-$NAVIGATION_TEMPLATE['side']['submenu_loweritem'] = '
-			<li role="menuitem" class="dropdown-submenu">
-				<a href="{LINK_URL}"{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>
-				{LINK_SUB}
-			</li>
-';
+$NAVIGATION_TEMPLATE['side']['submenu_loweritem'] = '';
+ 
 
-$NAVIGATION_TEMPLATE['side']['submenu_item_active'] = '<li class="active"><a href="{LINK_URL}">{LINK_ICON}{LINK_NAME}</a></li>';
+
 
 $NAVIGATION_TEMPLATE['side']['submenu_end'] 		= '';
 

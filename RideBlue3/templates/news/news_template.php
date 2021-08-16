@@ -77,42 +77,37 @@ $NEWS_TEMPLATE['list']['item']	= '
 ';
 
 
-
-
- 
-
-
+//news frontpage 
 
 $NEWS_WRAPPER['default']['item']['NEWSIMAGE: item=1'] = '<span class="news-images-main pull-left float-left col-xs-12 col-sm-6 col-md-6">{---}</span>';
 
 $NEWS_TEMPLATE['default']['caption'] = null; // add a value to user tablerender()
 $NEWS_TEMPLATE['default']['start']	= '<!-- Default News Template -->';
 $NEWS_TEMPLATE['default']['item'] = '
- {SETIMAGE: w=200&h=200}
- <table style="width: 100%;" cellpadding="0" cellspacing="0">
-  <tr>
-    <td style="vertical-align: top;">
-      <h3>{NEWSTITLELINK=extend}</h3>
-      <span class="hpnote">' . LAN_THEME_8 . '&nbsp;{NEWSDATE=short}&nbsp;&nbsp;' . LAN_THEME_9 . '&nbsp;{NEWSAUTHOR}&nbsp;&nbsp;' . LAN_THEME_11 . '&nbsp;{NEWSCATEGORY}&nbsp;&nbsp;{NEWSCOMMENTS}</span>
-    </td>
-  </tr>
-  <tr>
-    <td style="vertical-align: top;">
+{SETIMAGE: w=200&h=200}
+<div class="news-card mb-3 card'.$theme_settings['news-card'].'">
+    <div class="news-card-header card-header'.$theme_settings['news-card-header'].' ">
+            <h3 class="card-title">{NEWSTITLELINK=extend}</h3>
+            <span class="hpnote">{LAN=LAN_THEME_8}&nbsp;{NEWSDATE=short}&nbsp;&nbsp;{LAN=LAN_THEME_9}&nbsp;{NEWSAUTHOR}&nbsp;&nbsp;{LAN=LAN_THEME_11}&nbsp;{NEWSCATEGORY}&nbsp;&nbsp;{NEWSCOMMENTS}</span>
+    </div>
+	<div class="news-card-body card-body">
 		<div class="newscont">
-		{NEWSIMAGE}{NEWSBODY}
-		{EXTENDED}
+			{NEWSIMAGE}
+            <p class="card-text">{NEWS_BODY=body}
+			{NEWS_BODY=extended}</p>
 		</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="vertical-align: top;">
-{EMAILICON}
-{PRINTICON}
-{PDFICON}
-{ADMINOPTIONS}
-    </td>
-  </tr>
-</table>
+	</div>
+	<div class="news-card-footer card-footer">
+		{EMAILICON}
+		{PRINTICON}
+		{PDFICON}
+		{ADMINOPTIONS}
+	</div>
+</div>
+
+
+ 
+ 
 ';
 
 $NEWS_TEMPLATE['default']['end']	= '';
